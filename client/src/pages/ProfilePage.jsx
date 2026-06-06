@@ -1,31 +1,18 @@
-import {  useState } from "react"; //useContext,
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import assets from "../assets/assets";
-// import { AuthContext } from "../../context/AuthContext";
 
 const ProfilePage = () => {
-  // const { authUser, updateProfile } = useContext(AuthContext);
 
   const [selectedImg, setSelectedImg] = useState(null);
   const navigate = useNavigate();
-  const [name, setName] = useState("Martin Johnson");//authUser.fullName
-  const [bio, setBio] = useState("Hi everyone, I am using Chatify"); //authUser.bio
+  const [name, setName] = useState("Martin Johnson");
+  const [bio, setBio] = useState("Hi everyone, I am using Chatify");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (!selectedImg) { 
-    //   await updateProfile({ fullName: name, bio });
       navigate("/");
-    //   return;
-    // }
 
-    // const reader = new FileReader();
-    // reader.readAsDataURL(selectedImg);
-    // reader.onload = async () => {
-    //   const base64Image = reader.result;
-    //   await updateProfile({ profilePic: base64Image, fullName: name, bio });
-    //   navigate("/");
-    // };
   };
 
   return (
@@ -85,7 +72,7 @@ const ProfilePage = () => {
           className={`max-w-44 aspect-square rounded-full mx-10 max-sm:mt-10 ${
             selectedImg && "rounded-full"
           }`}
-          src={ assets.logo_icon} //authUser?.profilePic ||
+          src={ assets.logo_icon}
           alt="logo"
         />
       </div>
